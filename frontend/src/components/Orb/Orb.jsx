@@ -22,6 +22,7 @@ function Orb() {
     const OrbStyled = styled.div`
         width: 70vh;
         height: 70vh;
+		z-index: -1;
         position: absolute;
         border-radius: 50%;
         margin-left: -37vh;

@@ -5,11 +5,8 @@ import Orb from "./components/Orb/Orb";
 import Navigation from "./components/Navigation/Navigation";
 
 function App() {
-
-
-
   return (
-    <AppStyled bg={bg}className="App">
+    <AppStyled bg={bg} className="App">
       <Orb />
       <MainLayout>
         <Navigation />
@@ -22,6 +19,7 @@ const AppStyled = styled.div `
   height: 100vh;
   background-image: url(${props => props.bg});
   position: relative;
+   isolation: isolate;
 `;
 
 
