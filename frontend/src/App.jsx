@@ -15,39 +15,38 @@ function App() {
     switch(active){
       case 1:
         return <Dashboard />
-      case 2: 
-        return <Dashboard />
-      case 3:
+      case 2:
         return <Income />
-      case 4: 
+      case 3:
         return <Expenses />
-      default: { <Dashboard />}
+      default: 
+        return <Dashboard />
     }
   }
 
   const orbMemo = useMemo(() => {
     return <Orb />
-  },[])
-  useState
+  }, [])
+
   return (
     <AppStyled bg={bg} className="App">
       {orbMemo}
       <MainLayout>
         <Navigation active={active} setActive={setActive}/>
         <main>
-          {displayData}
+          {displayData()}
         </main>
       </MainLayout>
     </AppStyled>
   );
 }
 
-const AppStyled = styled.div `
+const AppStyled = styled.div`
   height: 100vh;
   background-image: url(${props => props.bg});
   position: relative;
-   isolation: isolate;
-   main{
+  isolation: isolate;
+  main{
     flex: 1;
     background: rgba(252, 246, 249, 0.78);
     border: 3px solid #FFFFFF;
@@ -56,8 +55,8 @@ const AppStyled = styled.div `
     overflow-x: hidden;
     &::-webkit-scrollbar{
       width: 0;
-   }
+    }
+  }
 `;
-
 
 export default App;
