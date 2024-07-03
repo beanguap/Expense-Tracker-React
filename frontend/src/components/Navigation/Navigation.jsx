@@ -2,10 +2,13 @@ import styled from "styled-components"
 import avatar from "../../img/avatar.png"
 import { menuItems } from "../../utils/menuItems"
 import { signout } from "../../utils/Icons"
+import PropTypes from 'prop-types'
 
-function Navigation() {
+function Navigation({active, setActive}) {
   return (
     <NavStyled>
+        
+
         <div className="user-con">
             <img src={avatar} alt="" />
             <div className="text">
@@ -17,6 +20,8 @@ function Navigation() {
             {menuItems.map((item) => {
                 return <li
                     key={item.id}
+                    onClick={() => setActive(item.id)}
+                    className={active === item.id ? 'active': ''}
                 >
                     {item.icon}
                     <span>{item.title}</span>
@@ -31,6 +36,12 @@ function Navigation() {
     </NavStyled>
   )
 }
+
+
+Navigation.propTypes = {
+    active: PropTypes.string.isRequired,
+    setActive: PropTypes.func.isRequired
+  };
 
 const NavStyled = styled.nav `
     padding: 2rem 1.5rem;
@@ -72,6 +83,39 @@ const NavStyled = styled.nav `
             flex: 1;
             display: flex;
             flex-direction: column;
+            li {
+                display: grid;
+                grid-template-columns: 40px auto;
+                align-items: center;
+                margin: .6rem 0;
+                font-weight: 500;
+                cursor: pointer !important;
+                transition: all .4s ease-in-out;
+                color: rgba(34, 34, 96, .6);
+                padding-left: 1rem;
+                position: relative;
+            }   
+                i {
+                    color: rgba(34, 34, 96, 0.6);
+                    font-size: 1.4rem;
+                    transition: all .4s ease-in-out;
+                }
+            }
+        }
+        .active{
+        color: rgba(34, 34, 96, 1) !important;
+        i{
+            color: rgba(34, 34, 96, 1) !important;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #222260;
+            border-radius: 0 10px 10px 0;
         }
     }
 `;
