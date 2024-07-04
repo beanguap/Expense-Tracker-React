@@ -3,7 +3,14 @@ import styled from 'styled-components'
 const Income = () => {
   return (
     <IncomeStyled>
-      Dashboard
+      <h1>Incomes</h1>
+      <div className='income-content'>
+        <div className="form-container"></div>
+        <div className="incomes">
+          
+        </div>
+      </div>
+      
     </IncomeStyled>
   )
 }

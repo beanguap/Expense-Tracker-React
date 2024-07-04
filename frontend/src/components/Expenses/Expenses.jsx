@@ -5,14 +5,14 @@ const Expenses = () => {
   return (
     <ExpensesStyled>
       <InnerLayout>
-        
-      <InnerLayout />
+        <h1>Incomes</h1>
+      </InnerLayout>
     </ExpensesStyled>
   )
 }
 
 const ExpensesStyled = styled.div`
-
+  /* Add your styles here */
 `
 
 export default Expenses
