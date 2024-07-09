@@ -11,6 +11,8 @@ import Expenses from "./components/Expenses/Expenses"
 function App() {
   const [active, setActive] = useState(1)
 
+  
+
   const displayData = () => {
     switch(active){
       case 1:
