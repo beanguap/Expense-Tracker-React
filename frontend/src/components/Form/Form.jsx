@@ -1,10 +1,10 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
-import { useGlobalContext } from '../../context/globalContext';
+import { useGlobalContext } from '/context/globalContext';
 import Button from '../Button/Button';
 import { plus } from '../../utils/Icons';
-
 
 function Form() {
     const {addIncome, getIncomes, error, setError} = useGlobalContext()
@@ -16,7 +16,7 @@ function Form() {
         description: '',
     })
 
-    const { title, amount, date, category,description } = inputState;
+    const { title, amount, date, category, description } = inputState;
 
     const handleInput = name => e => {
         setInputState({...inputState, [name]: e.target.value})
@@ -68,10 +68,10 @@ function Form() {
             </div>
             <div className="selects input-control">
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
-                    <option value=""  disabled >Select Option</option>
+                    <option value="" disabled>Select Option</option>
                     <option value="salary">Salary</option>
                     <option value="freelancing">Freelancing</option>
-                    <option value="investments">Investiments</option>
+                    <option value="investments">Investments</option>
                     <option value="stocks">Stocks</option>
                     <option value="bitcoin">Bitcoin</option>
                     <option value="bank">Bank Transfer</option>  
@@ -88,14 +88,13 @@ function Form() {
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}
-                    bg={'var(--color-accent'}
+                    bg={'var(--color-accent)'}
                     color={'#fff'}
                 />
             </div>
         </FormStyled>
     )
 }
-
 
 const FormStyled = styled.form`
     display: flex;
@@ -143,4 +142,5 @@ const FormStyled = styled.form`
         }
     }
 `;
-export default Form
+
+export default Form;
