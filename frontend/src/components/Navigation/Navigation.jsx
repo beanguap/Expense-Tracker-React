@@ -7,13 +7,16 @@ import PropTypes from 'prop-types';
 function Navigation({ active, setActive }) {
   return (
     <NavStyled>
+      {/* User info section */}
       <div className="user-con">
-        <img src={avatar} alt="" />
+        <img src={avatar} alt="User Avatar" />
         <div className="text">
           <h2>Mike</h2>
           <p>Your Money</p>
         </div>
       </div>
+
+      {/* Menu items */}
       <ul className="menu-items">
         {menuItems.map((item) => (
           <li
@@ -26,6 +29,8 @@ function Navigation({ active, setActive }) {
           </li>
         ))}
       </ul>
+
+      {/* Bottom navigation */}
       <ul className="bottom-nav">
         <li>
           {signout} Sign Out
@@ -41,6 +46,7 @@ Navigation.propTypes = {
 };
 
 const NavStyled = styled.nav`
+  /* Styles for the navigation container */
   padding: 2rem 1.5rem;
   width: 374px;
   z-index: -1;
@@ -54,6 +60,7 @@ const NavStyled = styled.nav`
   justify-content: space-between;
   gap: 2rem;
 
+  /* Styles for the user info section */
   .user-con {
     height: 100px;
     display: flex;
@@ -80,6 +87,7 @@ const NavStyled = styled.nav`
     }
   }
 
+  /* Styles for the menu items section */
   .menu-items {
     flex: 1;
     display: flex;
@@ -91,7 +99,7 @@ const NavStyled = styled.nav`
       align-items: center;
       margin: 0.6rem 0;
       font-weight: 500;
-      cursor: pointer !important;
+      cursor: pointer;
       transition: all 0.4s ease-in-out;
       color: rgba(34, 34, 96, 0.6);
       padding-left: 1rem;
@@ -105,11 +113,12 @@ const NavStyled = styled.nav`
     }
   }
 
+  /* Styles for the active menu item */
   .active {
-    color: rgba(34, 34, 96, 1) !important;
+    color: rgba(34, 34, 96, 1);
 
     i {
-      color: rgba(34, 34, 96, 1) !important;
+      color: rgba(34, 34, 96, 1);
     }
 
     &::before {
@@ -124,6 +133,7 @@ const NavStyled = styled.nav`
     }
   }
 
+  /* Styles for the bottom navigation section */
   .bottom-nav {
     list-style: none;
     padding: 0;
