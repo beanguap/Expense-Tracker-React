@@ -49,7 +49,7 @@ const NavStyled = styled.nav`
   /* Styles for the navigation container */
   padding: 2rem 1.5rem;
   width: 374px;
-  z-index: -1;
+  z-index: 1;
   height: 100%;
   background: rgba(252, 246, 249, 0.78);
   border: 3px solid #ffffff;
